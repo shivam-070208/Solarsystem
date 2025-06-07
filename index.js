@@ -379,6 +379,7 @@ const animate = () => {
 };
 
 window.addEventListener('click', (event) => {
+  
   const rect = renderer.domElement.getBoundingClientRect();
   const mouseX = ((event.clientX - rect.left) / rect.width) * 2 - 1;
   const mouseY = -((event.clientY - rect.top) / rect.height) * 2 + 1;
@@ -391,6 +392,9 @@ window.addEventListener('click', (event) => {
 });
 
 const focusCameraOnPlanet =(planet)=> {
+  if (!('onpointermove' in window || 'onmousemove' in window)) {
+    showPlanetInfo(planet.name);
+  }
  const PlanetPosition = new THREE.Vector3(planet.position.x, planet.position.y, planet.position.z);
 
 
