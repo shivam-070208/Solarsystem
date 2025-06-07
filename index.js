@@ -216,6 +216,7 @@ planetInfoDiv.style.transform = 'translateX(-50%)';
 planetInfoDiv.style.background = 'rgba(0,0,0,0.85)';
 planetInfoDiv.style.color = '#fff';
 planetInfoDiv.style.padding = '12px 24px';
+planetInfoDiv.style.paddingBottom = '60px';
 planetInfoDiv.style.borderRadius = '8px';
 planetInfoDiv.style.fontFamily = 'Arial, sans-serif';
 planetInfoDiv.style.fontSize = '16px';
@@ -395,7 +396,7 @@ const focusCameraOnPlanet =(planet)=> {
 
 gsap.to(camera.position, {
   x: PlanetPosition.x ,
-  y: PlanetPosition.y + planet.geometry.parameters.radius,
+  y: PlanetPosition.y + planet.geometry.parameters.radius +1.4,
   z: PlanetPosition.z,
   duration: 1.0,
   ease: "power2.inOut",
