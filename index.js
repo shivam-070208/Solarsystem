@@ -361,8 +361,8 @@ const animate = () => {
   });
 }
 
-  // Raycasting for hover
-  raycaster.setFromCamera(mouse, camera);
+   if (window.matchMedia('(pointer: fine)').matches) {
+     raycaster.setFromCamera(mouse, camera);
   const intersects = raycaster.intersectObjects(planets);
   if (intersects.length > 0) {
     const planet = intersects[0].object;
@@ -374,6 +374,7 @@ const animate = () => {
     hoveredPlanet = null;
     hidePlanetInfo();
   }
+}
 
   renderer.render(scene, camera);
 };
@@ -394,7 +395,7 @@ window.addEventListener('click', (event) => {
 const focusCameraOnPlanet =(planet)=> {
   if (!window.matchMedia('(pointer: fine)').matches) {
     // No cursor (likely touch device), do nothing or show a message if needed
-    return;
+   showPlanetInfo(planet.name)
   }
  const PlanetPosition = new THREE.Vector3(planet.position.x, planet.position.y, planet.position.z);
 
