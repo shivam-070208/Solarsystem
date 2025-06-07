@@ -1,3 +1,4 @@
+# for live view '[Click here](https://solarsystem-mauve-theta.vercel.app/)'
 # Solar System 3D Visualization
 
 A beautiful interactive 3D model of the Solar System built with [Three.js](https://threejs.org/). Explore the planets, view their orbits, and learn interesting facts about each planet. Includes smooth camera controls, animated orbits, and a pause/start feature.

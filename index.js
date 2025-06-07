@@ -394,7 +394,7 @@ window.addEventListener('click', (event) => {
 
 const focusCameraOnPlanet =(planet)=> {
   if (!window.matchMedia('(pointer: fine)').matches) {
-    // No cursor (likely touch device), do nothing or show a message if needed
+   
    showPlanetInfo(planet.name)
   }
  const PlanetPosition = new THREE.Vector3(planet.position.x, planet.position.y, planet.position.z);
