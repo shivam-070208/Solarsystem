@@ -272,7 +272,8 @@ animBtn.addEventListener('click', () => {
 });
 
 // init function to set up the scene, camera, renderer, and controls 
-const init = () => {  scene = new THREE.Scene();
+const init = () => {  
+  scene = new THREE.Scene();
   
   // Initialize GUI
   if (window.dat) {
@@ -303,6 +304,7 @@ const init = () => {  scene = new THREE.Scene();
     0.1,
     1000
   );
+  camera.fov = Math.atan(window.innerHeight/window.innerWidth)* (180/Math.PI)
   
   const canvas = document.querySelector("canvas");
 
@@ -311,7 +313,7 @@ const init = () => {  scene = new THREE.Scene();
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setPixelRatio(window.devicePixelRatio);
 
-  const pointlight = new THREE.PointLight("#FFFFFF", 0.4, 1140.0); // Increased intensity
+  const pointlight = new THREE.PointLight("#FFFFFF", 0.5, 1140.0); // Increased intensity
   pointlight.position.set(0, 0, 0);
   scene.add(pointlight);
 
